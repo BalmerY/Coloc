@@ -1,0 +1,22 @@
+script(src="/javascripts/users/profile.js")
+div(class = "profile-container bg-white me-3 d-flex flex-column")
+    form(id="form-container" class= "d-flex flex-row justify-content-center align-items-center" action="/users/update/image" method="post" enctype="multipart/form-data")
+        input(id="input-avatar" type="file" name="avatar" class="d-none")
+        img(id="img-profile" src=currentUser.avatar, class="img-fluid rounded-circle mt-3")
+    div(class= "d-flex flex-row justify-content-center align-items-center")
+        p=`${currentUser.name} (${currentUser.local.email})`
+    div(class= "d-flex flex-row justify-content-center align-items-center text-center my-3")
+        div(class="flex-fill")
+            p
+                strong Apparts
+                br
+                span(class="text-primary")= flats && flats.length ? flats.length : "-"
+        div(class="flex-fill")
+            p    
+                strong Suiviss
+                br
+                span(class="text-primary")= "2"
+
+
+
+

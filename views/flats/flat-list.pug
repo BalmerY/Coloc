@@ -1,0 +1,6 @@
+if flats
+    each flat in flats
+        div(class = "card flat-element")
+            div(class = "card-body p-2 d-flex flex-row justify-content-center align-items-center")
+                a(class ="flex-fill card-text" href="/flats/edit/" + flat._id)= flat.name
+                button(class = "btn btn-outline-danger btn-sm mt-1" flatid = flat._id) x 

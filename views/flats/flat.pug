@@ -1,0 +1,8 @@
+extends ../layout.pug
+
+block content
+    script(src="/javascripts/flats/flat.js")
+    div(class = "d-flex flex-row content mx-auto ")
+        include ../includes/profile.pug
+        div(class = "flex-fill d-flex flex-column" id="flat-list-container")
+            include flat-list.pug 

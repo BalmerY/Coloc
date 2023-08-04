@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block content 
+    div(class = "d-flex flex-row justify-content-center")
+        form(class = "card w-50 mt-5" method = "post" action = "/auth/signin")
+            div(class = "card-header") Connexion
+            div(class = "card-body")
+                div(class = "mb-3")
+                    label(for = "email") Email
+                    input(class = "form-control" type = "email" name = "email")
+                div(class = "mb-3")
+                    label(for = "password") Mot de passe
+                    input(class = "form-control" type = "password" name = "password") 
+                if errors
+                    ul(class="my-2")
+                        each error in errors
+                            li(class = "text-danger")= error
+                div(class = "w-100")
+                    input(type = "submit" value = "connecter" class = "btn btn-primary ms-auto d-block")
+                div(class = "d-flex flex-column align-items-center justify-content-center w-100 mt-3")
+                    a(class="align-items-center" href="/auth/google") Connexion Google

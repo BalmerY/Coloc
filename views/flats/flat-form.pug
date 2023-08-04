@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content 
+    div(class = "d-flex flex-row content mx-auto")
+        include ../includes/profile 
+        div(class = "flex-fill")
+            form(class = "card" method="post" action = flat && flat._id ? "/flats/update/" + flat._id : "/flats")
+                div(class = "card-header") Appartement
+                    div(class = "card-body")
+                        div(class = "mb3")
+                            textarea(class = "form-control" name = "name", placeholder = "Mon joli nom d'appartement")= flat && flat.name
+                            if errors 
+                                ul(class = "my-2")
+                                    each error in errors
+                                        li(class = "danger")= error
+                    div(class = " w-100")
+                        input(type = "submit" value = "Envoyer" class = "btn btn-primary ms-auto d-block")
